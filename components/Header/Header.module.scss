@@ -1,0 +1,47 @@
+@import "/styles/globals.css";
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 1.6rem 0;
+  max-width: 110rem;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.searchBox {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.searchField {
+  border: none;
+  font-size: 1.6rem;
+  outline: none;
+  height: 3rem;
+  min-width: 30rem;
+
+  &::placeholder {
+    color: var(--text-grey);
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  svg {
+    cursor: pointer;
+  }
+}
+
+.link {
+  font-size: 1.6rem;
+}

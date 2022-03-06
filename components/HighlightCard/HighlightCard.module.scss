@@ -1,0 +1,38 @@
+.card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  background-color: #F7FAFC;
+}
+
+.textArea {
+  padding: 10rem 8rem;
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: var(--text-grey);
+    font-weight: 400;
+    margin: 3rem 0;
+  }
+
+  span {
+    font-size: 1.6rem;
+    color: var(--text-grey);
+    font-weight: 300;
+  }
+
+  a {
+    color: var(--heading-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

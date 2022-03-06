@@ -1,0 +1,41 @@
+.card {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(192, 189, 189, 0.25);
+  border-radius: 5px;
+  height: 40rem;
+}
+
+.textArea {
+  padding: 2rem;
+
+  h3 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--heading-color);
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: var(--text-grey);
+    margin: 3rem 0;
+  }
+
+  span {
+    font-size: 1.4rem;
+    color: var(--text-grey);
+    font-weight: 300;
+  }
+
+  a {
+    color: var(--heading-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+

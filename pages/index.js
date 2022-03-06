@@ -6,19 +6,35 @@ import Cards from "../components/Cards/Cards";
 import Card from "../components/Card/Card";
 import HighlightCard from "../components/HighlightCard/HighlightCard";
 import Button from "../components/Button/Button";
+import sanity, { urlFor } from "../sanity";
 
-export default function Home() {
+export default function Home({ posts }) {
+  console.log(posts);
+  const latestPost = posts[0];
   return (
     <div>
       <Head>
         <title>SomeBlog</title>
       </Head>
       <Hero />
-      <LatestCard />
+      <LatestCard
+        title={latestPost.title}
+        description={latestPost.description}
+        publishedAt={latestPost.publishedAt}
+        link={latestPost.slug.current}
+        image={latestPost.mainImage}
+      />
       <Cards>
-        <Card />
-        <Card />
-        <Card />
+        {posts.slice(0, 2).map((post) => (
+          <Card
+            key={post._id}
+            title={post.title}
+            description={post.description}
+            publishedAt={post.publishedAt}
+            link={post.slug.current}
+            image={post.mainImage}
+          />
+        ))}
       </Cards>
       <HighlightCard />
       <div
@@ -28,4 +44,29 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const posts = await sanity.fetch(`
+ *[_type == "post"] {
+    _id,
+    title,
+    body,
+    mainImage,
+  publishedAt,
+  author-> {
+  name,
+  image,
+},
+description,
+slug
+   
+  }
+  `);
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }

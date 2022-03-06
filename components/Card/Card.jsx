@@ -1,27 +1,26 @@
 import styles from "./Card.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { urlFor } from "../../sanity";
 
-function Card() {
+function Card(props) {
+  const date = new Date(props.publishedAt).toDateString();
   return (
     <div className={styles.card}>
       <div style={{ width: "100%", height: "18rem", position: "relative" }}>
         <Image
-          src="/../public/images/image.png"
+          src={urlFor(props.image).url()}
           layout="fill"
           objectFit="contain"
+          alt=""
         />
       </div>
       <div className={styles.textArea}>
-        <h3>long established</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
-          dicta dolor fuga laboriosam minus pariatur porro quia totam veniam
-          voluptates.
-        </p>
+        <h3>{props.title}</h3>
+        <p>{props.description}</p>
         <div className={styles.row}>
-          <span>May 20th, 2020</span>
-          <Link href="/">
+          <span>{date}</span>
+          <Link href={`/posts/${props.link}`}>
             <a>Read More</a>
           </Link>
         </div>

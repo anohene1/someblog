@@ -1,0 +1,51 @@
+.article {
+  padding: 5rem 9rem;
+
+  hr {
+    border: none;
+    border-top: 1px solid #E8E7E7;
+    margin: 3rem 0;
+  }
+
+}
+
+.metadata {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  h3 {
+    font-size: 1.8rem;
+    color: var(--heading-color);
+    font-weight: 600;
+  }
+
+  span {
+    font-size: 1.8rem;
+    color: var(--text-grey);
+    font-weight: 300;
+  }
+}
+
+.mainHeading {
+  font-size: 4.5rem;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  color: var(--text-grey);
+}
+
+.postHeading {
+  font-size: 3rem;
+  color: var(--heading-color);
+}
+
+.postSubHeading {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: var(--heading-color);
+}

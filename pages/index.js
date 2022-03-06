@@ -5,6 +5,7 @@ import LatestCard from "../components/LatestCard/LatestCard";
 import Cards from "../components/Cards/Cards";
 import Card from "../components/Card/Card";
 import HighlightCard from "../components/HighlightCard/HighlightCard";
+import Button from "../components/Button/Button";
 
 export default function Home() {
   return (
@@ -20,6 +21,11 @@ export default function Home() {
         <Card />
       </Cards>
       <HighlightCard />
+      <div
+        style={{ display: "flex", justifyContent: "end", marginTop: "3rem" }}
+      >
+        <Button text="See more" />
+      </div>
     </div>
   );
 }

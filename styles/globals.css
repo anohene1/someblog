@@ -11,6 +11,7 @@ body {
   font-size: 62.5%;
   --text-grey: #718096;
   --heading-color: #2D3748;
+  --button-color: #6B46C1;
 }
 
 a {

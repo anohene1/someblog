@@ -9,7 +9,8 @@ body {
 
 :root {
   font-size: 62.5%;
-  --text-grey: #718096
+  --text-grey: #718096;
+  --heading-color: #2D3748;
 }
 
 a {
@@ -25,3 +26,4 @@ a {
   max-width: 110rem;
   margin: 0 auto;
 }
+

@@ -1,0 +1,30 @@
+.footer {
+  width: 100%;
+  border-top: 1px solid #E8E8E8;
+  margin-top: 5rem;
+}
+
+.content {
+  max-width: 110rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 600;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}

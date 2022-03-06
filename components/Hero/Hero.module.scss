@@ -1,0 +1,19 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7rem 0;
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--text-grey);
+  }
+}
+
+.title {
+  font-size: 6rem;
+  font-weight: 600;
+  max-width: 45rem;
+  margin: 0;
+}

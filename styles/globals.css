@@ -6,6 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+
 :root {
   font-size: 62.5%;
   --text-grey: #718096
@@ -18,4 +19,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.layout {
+  max-width: 110rem;
+  margin: 0 auto;
 }

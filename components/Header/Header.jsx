@@ -1,11 +1,28 @@
 import Link from "next/link";
 import styles from "./Header.module.scss";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 
 export default function Header() {
+  const router = useRouter();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    router.push({
+      pathname: "/search",
+      query: { searchQuery: data.searchQuery },
+    });
+  };
+
   return (
     <header className={styles.header}>
       <h1 className={styles.logo}>SomeBlog</h1>
-      <div className={styles.searchBox}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.searchBox}>
         <svg
           width="20"
           height="20"
@@ -19,11 +36,12 @@ export default function Header() {
           />
         </svg>
         <input
+          {...register("searchQuery")}
           className={styles.searchField}
           type="text"
           placeholder="Search..."
         />
-      </div>
+      </form>
       <nav className={styles.nav}>
         <Link href="/">
           <a className={styles.link}>Home</a>

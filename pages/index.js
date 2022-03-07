@@ -6,6 +6,7 @@ import Cards from "../components/Cards/Cards";
 import Card from "../components/Card/Card";
 import HighlightCard from "../components/HighlightCard/HighlightCard";
 import Button from "../components/Button/Button";
+import Link from "next/link";
 import sanity, { urlFor } from "../sanity";
 
 export default function Home({ posts }) {
@@ -40,7 +41,9 @@ export default function Home({ posts }) {
       <div
         style={{ display: "flex", justifyContent: "end", marginTop: "3rem" }}
       >
-        <Button text="See more" />
+        <Link href="/posts">
+          <Button text="See more" />
+        </Link>
       </div>
     </div>
   );

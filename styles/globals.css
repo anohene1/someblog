@@ -7,6 +7,7 @@ body {
 }
 
 
+
 :root {
   font-size: 62.5%;
   --text-grey: #718096;
@@ -26,5 +27,8 @@ a {
 .layout {
   max-width: 110rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 11rem);
 }
 

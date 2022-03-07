@@ -10,7 +10,7 @@ function Footer(props) {
           <span>2022 copyright all rights reserved</span>
         </div>
         <div className={styles.icons}>
-          <a href="">
+          <a href="https://www.instagram.com/anohene1/">
             <svg
               width="24"
               height="24"
@@ -24,7 +24,7 @@ function Footer(props) {
               />
             </svg>
           </a>
-          <a href="">
+          <a href="https://twitter.com/anohene1">
             <svg
               width="22"
               height="18"
@@ -38,7 +38,7 @@ function Footer(props) {
               />
             </svg>
           </a>
-          <a href="">
+          <a href="https://www.linkedin.com/in/anohene1">
             <svg
               width="24"
               height="24"

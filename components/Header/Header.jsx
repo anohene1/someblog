@@ -28,10 +28,10 @@ export default function Header() {
         <Link href="/">
           <a className={styles.link}>Home</a>
         </Link>
-        <Link href="/">
+        <Link href="/posts">
           <a className={styles.link}>Articles</a>
         </Link>
-        <a href="">
+        <a href="https://www.instagram.com/anohene1">
           <svg
             width="24"
             height="24"
@@ -45,7 +45,7 @@ export default function Header() {
             />
           </svg>
         </a>
-        <a href="">
+        <a href="https://twitter.com/anohene1">
           <svg
             width="22"
             height="18"
@@ -59,7 +59,7 @@ export default function Header() {
             />
           </svg>
         </a>
-        <a href="">
+        <a href="https://www.linkedin.com/in/anohene1">
           <svg
             width="24"
             height="24"

@@ -9,65 +9,83 @@ import Pagination from "rc-pagination";
 import "rc-pagination/assets/index.css";
 
 export default function Search({ posts }) {
-  // console.log(searchQuery);
   const router = useRouter();
   const { searchQuery } = router.query;
 
-  let countPerPage = 15;
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pagePosts, setPagePosts] = useState(posts.slice(0, countPerPage));
+  if (searchQuery) {
+    let countPerPage = 15;
+    const [currentPage, setCurrentPage] = useState(1);
+    const [pagePosts, setPagePosts] = useState(posts.slice(0, countPerPage));
 
-  const updatePage = (page) => {
-    setCurrentPage(page);
-    const to = countPerPage * page;
-    const from = to - countPerPage;
-    setPagePosts(posts.slice(from, to));
-  };
+    const updatePage = (page) => {
+      setCurrentPage(page);
+      const to = countPerPage * page;
+      const from = to - countPerPage;
+      setPagePosts(posts.slice(from, to));
+    };
 
-  return (
-    <main>
-      <Head>
-        <title>Search</title>
-      </Head>
-      <h1
-        style={{
-          fontSize: "6rem",
-          fontWeight: "600",
-          maxWidth: "70rem",
-          margin: "5rem 0",
-        }}
-      >
-        Search Results for "{searchQuery}"
-      </h1>
+    return (
+      <main>
+        <Head>
+          <title>Search</title>
+        </Head>
+        <h1
+          style={{
+            fontSize: "6rem",
+            fontWeight: "600",
+            maxWidth: "70rem",
+            margin: "5rem 0",
+          }}
+        >
+          Search Results for "{searchQuery}"
+        </h1>
 
-      {posts.length > 0 ? (
-        <>
-          {" "}
-          <Cards>
-            {pagePosts.map((post) => (
-              <Card
-                key={post._id}
-                title={post.title}
-                description={post.description}
-                publishedAt={post.publishedAt}
-                link={post.slug.current}
-                image={post.mainImage}
-              />
-            ))}
-          </Cards>
-          <Pagination
-            pageSize={countPerPage}
-            total={posts.length}
-            onChange={updatePage}
-            current={currentPage}
+        {posts.length > 0 ? (
+          <>
+            {" "}
+            <Cards>
+              {pagePosts.map((post) => (
+                <Card
+                  key={post._id}
+                  title={post.title}
+                  description={post.description}
+                  publishedAt={post.publishedAt}
+                  link={post.slug.current}
+                  image={post.mainImage}
+                />
+              ))}
+            </Cards>
+            <Pagination
+              pageSize={countPerPage}
+              total={posts.length}
+              onChange={updatePage}
+              current={currentPage}
+              style={{
+                fontWeight: "600",
+                margin: "5rem auto",
+                textAlign: "center",
+              }}
+            />
+          </>
+        ) : (
+          <p
             style={{
-              fontWeight: "600",
-              margin: "5rem auto",
-              textAlign: "center",
+              fontSize: "3rem",
+              fontWeight: "300",
+              color: "var(--text-grey)",
             }}
-          />
-        </>
-      ) : (
+          >
+            We couldn't find any post that matches your search query :(
+          </p>
+        )}
+      </main>
+    );
+  } else {
+    return (
+      <>
+        <Head>
+          <title>Search</title>
+        </Head>
         <p
           style={{
             fontSize: "3rem",
@@ -75,11 +93,11 @@ export default function Search({ posts }) {
             color: "var(--text-grey)",
           }}
         >
-          We couldn't find any post that matches your search query :(
+          We don't do that here. Search for something.
         </p>
-      )}
-    </main>
-  );
+      </>
+    );
+  }
 }
 
 export async function getServerSideProps(context) {

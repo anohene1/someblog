@@ -8,8 +8,6 @@ import Card from "../components/Card/Card";
 import Pagination from "rc-pagination";
 import "rc-pagination/assets/index.css";
 
-// let searchQuery = Router.query.searchQuery;
-
 export default function Search({ posts }) {
   // console.log(searchQuery);
   const router = useRouter();
@@ -35,35 +33,51 @@ export default function Search({ posts }) {
         style={{
           fontSize: "6rem",
           fontWeight: "600",
-          maxWidth: "45rem",
+          maxWidth: "70rem",
           margin: "5rem 0",
         }}
       >
-        Search Results
+        Search Results for "{searchQuery}"
       </h1>
-      <Cards>
-        {pagePosts.map((post) => (
-          <Card
-            key={post._id}
-            title={post.title}
-            description={post.description}
-            publishedAt={post.publishedAt}
-            link={post.slug.current}
-            image={post.mainImage}
+
+      {posts.length > 0 ? (
+        <>
+          {" "}
+          <Cards>
+            {pagePosts.map((post) => (
+              <Card
+                key={post._id}
+                title={post.title}
+                description={post.description}
+                publishedAt={post.publishedAt}
+                link={post.slug.current}
+                image={post.mainImage}
+              />
+            ))}
+          </Cards>
+          <Pagination
+            pageSize={countPerPage}
+            total={posts.length}
+            onChange={updatePage}
+            current={currentPage}
+            style={{
+              fontWeight: "600",
+              margin: "5rem auto",
+              textAlign: "center",
+            }}
           />
-        ))}
-      </Cards>
-      <Pagination
-        pageSize={countPerPage}
-        total={posts.length}
-        onChange={updatePage}
-        current={currentPage}
-        style={{
-          fontWeight: "600",
-          margin: "5rem auto",
-          textAlign: "center",
-        }}
-      />
+        </>
+      ) : (
+        <p
+          style={{
+            fontSize: "3rem",
+            fontWeight: "300",
+            color: "var(--text-grey)",
+          }}
+        >
+          We couldn't find any post that matches your search query :(
+        </p>
+      )}
     </main>
   );
 }
@@ -86,7 +100,7 @@ description,
 slug
    
   }`,
-    { searchQuery }
+    { searchQuery: `${searchQuery}*` }
   );
 
   return {

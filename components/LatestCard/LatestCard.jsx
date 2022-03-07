@@ -17,12 +17,13 @@ function LatestCard(props) {
           </Link>
         </div>
       </div>
-      <Image
-        className={styles.image}
-        src={urlFor(props.image).url()}
-        width={485}
-        height={295}
-      />
+      <div style={{ width: "100%", height: "34.5rem", position: "relative" }}>
+        <Image
+          src={urlFor(props.image).url()}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
     </div>
   );
 }

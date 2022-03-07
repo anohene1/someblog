@@ -11,7 +11,7 @@ function Card(props) {
         <Image
           src={urlFor(props.image).url()}
           layout="fill"
-          objectFit="contain"
+          objectFit="cover"
           alt=""
         />
       </div>

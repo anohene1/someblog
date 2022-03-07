@@ -25,7 +25,7 @@ export default function Home({ posts }) {
         image={latestPost.mainImage}
       />
       <Cards>
-        {posts.slice(0, 2).map((post) => (
+        {posts.slice(1, 4).map((post) => (
           <Card
             key={post._id}
             title={post.title}
@@ -48,7 +48,7 @@ export default function Home({ posts }) {
 
 export async function getServerSideProps() {
   const posts = await sanity.fetch(`
- *[_type == "post"] {
+ *[_type == "post"] | order(publishedAt desc) {
     _id,
     title,
     body,

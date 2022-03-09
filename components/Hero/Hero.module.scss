@@ -4,6 +4,10 @@
   align-items: center;
   padding: 7rem 0;
 
+  @media (max-width: 555px) {
+    flex-direction: column;
+  }
+
   h2 {
     font-size: 3rem;
     font-weight: 300;

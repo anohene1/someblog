@@ -6,6 +6,10 @@
   gap: 4rem;
   padding: 1.6rem 0;
   max-width: 110rem;
+
+  @media (max-width: 850px) {
+    gap: 2rem;
+  }
 }
 
 .logo {
@@ -17,6 +21,14 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  //@media (max-width: 850px) {
+  //  width: 20rem;
+  //}
+
+  @media (max-width: 755px) {
+    display: none;
+  }
 }
 
 .searchField {
@@ -25,6 +37,10 @@
   outline: none;
   height: 3rem;
   min-width: 30rem;
+
+  //@media (max-width: 850px) {
+  //  width: 12rem;
+  //}
 
   &::placeholder {
     color: var(--text-grey);
@@ -43,4 +59,23 @@
 
 .link {
   font-size: 1.6rem;
+  margin-left: auto;
+
+  //@media (max-width: 630px) {
+  //  display: none;
+  //}
+}
+
+.social {
+  @media (max-width: 755px) {
+    display: none;
+  }
+}
+
+.searchButton {
+  display: none;
+
+  @media (max-width: 755px) {
+    display: block;
+  }
 }

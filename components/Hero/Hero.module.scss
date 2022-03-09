@@ -8,6 +8,10 @@
     font-size: 3rem;
     font-weight: 300;
     color: var(--text-grey);
+
+    @media (max-width: 850px) {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -16,4 +20,8 @@
   font-weight: 600;
   max-width: 45rem;
   margin: 0;
+
+  @media (max-width: 850px) {
+    font-size: 5rem;
+  }
 }

@@ -26,7 +26,7 @@ function HighlightCard() {
           src="/../public/images/image.png"
           layout="fill"
           objectFit="cover"
-          "blog owner's image"
+          "blog owner"
         />
       </div>
     </div>

@@ -12,6 +12,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    height: fit-content;
+    padding: 2rem;
+    //height: 10rem;
+  }
 }
 
 .copyright {
@@ -19,6 +27,12 @@
   align-items: center;
   font-size: 1.6rem;
   gap: 1rem;
+
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
 }
 
 .logo {

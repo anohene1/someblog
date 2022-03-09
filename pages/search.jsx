@@ -28,18 +28,18 @@ export default function Search({ posts }) {
     });
   };
 
+  let countPerPage = 15;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pagePosts, setPagePosts] = useState(posts.slice(0, countPerPage));
+
+  const updatePage = (page) => {
+    setCurrentPage(page);
+    const to = countPerPage * page;
+    const from = to - countPerPage;
+    setPagePosts(posts.slice(from, to));
+  };
+
   if (searchQuery) {
-    let countPerPage = 15;
-    const [currentPage, setCurrentPage] = useState(1);
-    const [pagePosts, setPagePosts] = useState(posts.slice(0, countPerPage));
-
-    const updatePage = (page) => {
-      setCurrentPage(page);
-      const to = countPerPage * page;
-      const from = to - countPerPage;
-      setPagePosts(posts.slice(from, to));
-    };
-
     return (
       <main>
         <Head>

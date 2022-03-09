@@ -22,6 +22,7 @@ function LatestCard(props) {
           src={urlFor(props.image).url()}
           layout="fill"
           objectFit="cover"
+          alt={props.title}
         />
       </div>
     </div>

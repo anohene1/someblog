@@ -24,8 +24,8 @@ export default function Custom404() {
           color: "var(--text-grey)",
         }}
       >
-        The page you're looking for cannot be found, but that's not the end of
-        the world. You can{" "}
+        The page you&apos;re looking for cannot be found, but that&apos;s not
+        the end of the world. You can{" "}
         <Link href="/">
           <a style={{ textDecoration: "underline" }}>click here</a>
         </Link>{" "}

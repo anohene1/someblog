@@ -22,10 +22,12 @@ export default function Search({ posts }) {
   } = useForm();
 
   const onSubmit = (data) => {
-    router.push({
-      pathname: "/search",
-      query: { searchQuery: data.searchQuery },
-    });
+    router
+      .push({
+        pathname: "/search",
+        query: { searchQuery: data.searchQuery },
+      })
+      .then(() => router.reload());
   };
 
   let countPerPage = 15;
@@ -53,7 +55,7 @@ export default function Search({ posts }) {
             margin: "5rem 0",
           }}
         >
-          Search Results for "{searchQuery}"
+          Search Results for &quot;{searchQuery}&quot;
         </h1>
 
         {posts.length > 0 ? (
@@ -91,7 +93,7 @@ export default function Search({ posts }) {
               color: "var(--text-grey)",
             }}
           >
-            We couldn't find any post that matches your search query :(
+            We couldn&apos;t find any post that matches your search query :(
           </p>
         )}
       </main>
@@ -109,7 +111,7 @@ export default function Search({ posts }) {
             color: "var(--text-grey)",
           }}
         >
-          What are you looking for? Let's see if we can find it.
+          What are you looking for? Let&apos;s see if we can find it.
         </p>
 
         <form

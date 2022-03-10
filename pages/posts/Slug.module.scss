@@ -1,6 +1,14 @@
 .article {
   padding: 5rem 9rem;
 
+  @media (max-width: 840px) {
+    padding: 3% 5%;
+  }
+
+  @media (max-width: 450px) {
+    padding: 4% 0;
+  }
+
   hr {
     border: none;
     border-top: 1px solid #E8E7E7;
@@ -14,16 +22,29 @@
   align-items: center;
   gap: 3rem;
 
+  @media (max-width: 840px) {
+    gap: 1.5rem;
+  }
+
   h3 {
     font-size: 1.8rem;
     color: var(--heading-color);
     font-weight: 600;
+
+    @media (max-width: 840px) {
+      font-size: 1.6rem;
+    }
+
   }
 
   span {
     font-size: 1.8rem;
     color: var(--text-grey);
     font-weight: 300;
+
+    @media (max-width: 840px) {
+      font-size: 1.6rem;
+    }
   }
 }
 
@@ -31,6 +52,10 @@
   font-size: 4.5rem;
   color: var(--heading-color);
   margin: 0;
+
+  @media (max-width: 840px) {
+    font-size: 3rem;
+  }
 }
 
 .paragraph {
@@ -41,6 +66,10 @@
 .postHeading {
   font-size: 3rem;
   color: var(--heading-color);
+
+  @media (max-width: 840px) {
+    font-size: 2.3rem;
+  }
 }
 
 .postSubHeading {

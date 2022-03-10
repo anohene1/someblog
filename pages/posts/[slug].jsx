@@ -22,7 +22,7 @@ export default function Post({ post }) {
         <Image
           src={urlFor(post.mainImage).url()}
           layout="fill"
-          objectFit="cover"
+          objectFit="contain"
           alt=""
         />
       </div>

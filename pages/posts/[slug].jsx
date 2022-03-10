@@ -3,9 +3,15 @@ import Image from "next/image";
 import PortableText from "react-portable-text";
 import styles from "./Slug.module.scss";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function Post({ post }) {
-  const date = new Date(post.publishedAt).toDateString();
+  // const date = new Date(post.publishedAt).toDateString();
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
@@ -24,7 +30,7 @@ export default function Post({ post }) {
         <h1 className={styles.mainHeading}>{post.title}</h1>
         <div className={styles.metadata}>
           <h3>Written by {post.author.name}</h3>
-          <span>{date}</span>
+          <span>{new Date(post.publishedAt).toDateString()}</span>
         </div>
         <hr />
         <PortableText

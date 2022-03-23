@@ -7,8 +7,7 @@ The title is what it is because I'm very creative with naming projects. 😌
 - Uses CSS Modules
 - Uses <a href="https://www.sanity.io/" >Sanity.io</a> for content management or backend, if you will.
 
-Link to live website 👇🏽
-<a href="https://someblog-anohene1.vercel.app/">https://someblog-anohene1.vercel.app/</a>
+Link to live website: <a href="https://someblog-anohene1.vercel.app/">https://someblog-anohene1.vercel.app/</a>
 
 
 I don't own the design. I cloned a figma design. Link to the design 👇🏽
